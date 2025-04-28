@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  api:
+    build: ./app         # Path to your Dockerfile directory
+    ports:
+      - "5001:5000"      # Maps host port 5001 to container port 5000
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    volumes:
+      - ./app:/app       # For live code updates during development
+    depends_on:
+      - redis
+    networks:
+      - ml_app_network
+
+  redis:
+    image: "redis:6.2-alpine"
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - ml_app_network
+
+volumes:
+  redis_data:
+
+networks:
+  ml_app_network:
+    driver: bridge
