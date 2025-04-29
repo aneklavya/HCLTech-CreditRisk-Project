@@ -161,8 +161,8 @@ plt.show()
 
 ## 🧑‍💻 Author
 
-- **Name**: [Your Name Here]
-- **GitHub**: [Your GitHub Profile Link]
+- **Name**: Anurag Jha
+- **GitHub**: https://github.com/aneklavya
 
 ---
 
