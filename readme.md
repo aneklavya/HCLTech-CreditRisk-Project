@@ -37,7 +37,7 @@ Loan_Prediction_Project/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/loan-prediction-project.git
+git clone https://github.com/aneklavya/loan-prediction-project.git
 cd loan-prediction-project
 ```
 
