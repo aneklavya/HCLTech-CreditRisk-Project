@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 from streamlit_lottie import st_lottie
 import requests
+import os
 
 # Set page configuration
 st.set_page_config(page_title="Loan Predictor", page_icon="💡", layout="centered")
@@ -20,7 +21,9 @@ approved_lottie = load_lottieurl("https://assets1.lottiefiles.com/packages/lf20_
 denied_lottie = load_lottieurl("https://assets1.lottiefiles.com/packages/lf20_edo8zvm7.json")  # Denial animation
 
 # Load the trained model
-model = joblib.load('C:\\Users\\ADMIN\\Desktop\\Loan_Prediction_Project\\models\\best_model.pkl')
+
+model_path = os.path.join('models', 'best_model.pkl')
+model = joblib.load(model_path)
 
 # Define the prediction function
 def predict(loan_amount, annual_income, loan_to_value, debt_ratio, credit_score):
