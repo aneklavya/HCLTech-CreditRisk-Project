@@ -22,8 +22,25 @@ denied_lottie = load_lottieurl("https://assets1.lottiefiles.com/packages/lf20_ed
 
 # Load the trained model
 
-model_path = os.path.join('models', 'best_model.pkl')
+import os
+import joblib
+
+# Get current file's folder (so we can build an absolute path)
+current_dir = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(current_dir, 'models', 'best_model.pkl')
+
+# Load the model
 model = joblib.load(model_path)
+import os
+import joblib
+
+# Get current file's folder (so we can build an absolute path)
+current_dir = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(current_dir, 'models', 'best_model.pkl')
+
+# Load the model
+model = joblib.load(model_path)
+
 
 # Define the prediction function
 def predict(loan_amount, annual_income, loan_to_value, debt_ratio, credit_score):
